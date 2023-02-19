@@ -1,0 +1,25 @@
+{
+  "pages": {
+    "customize": {
+      "title": "Customize your view",
+      "description": "These settings affect all the Kaana accounts on this browser.",
+      "AddThemeButton": "Add Theme",
+    },
+  },
+  "banners": {
+    "welcome": "hello, welcome to %{app_name}!"
+  },
+  "buttons": {
+    "done": "Done",
+    "save": "Save",
+    "cancel": "Cancel",
+    "add": "Add",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish",
+    "submit": "Submit",
+  },
+}

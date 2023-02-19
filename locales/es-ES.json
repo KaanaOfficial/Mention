@@ -1,0 +1,25 @@
+{
+    "pages": {
+        "customize": {
+            "title": "Personaliza tu vista",
+            "description": "Estos ajustes afectan a todas las cuentas de Kaana en este navegador.",
+            "AddThemeButton": "Añadir tema",
+        },
+    },
+    "banners": {
+        "welcome": "¡Hola, bienvenido/a a %{app_name}!"
+    },
+    "buttons": {
+        "done": "Hecho",
+        "save": "Guardar",
+        "cancel": "Cancelar",
+        "add": "Añadir",
+        "delete": "Eliminar",
+        "edit": "Editar",
+        "close": "Cerrar",
+        "back": "Atrás",
+        "next": "Siguiente",
+        "finish": "Finalizar",
+        "submit": "Enviar",
+    },
+}
