@@ -1,0 +1,104 @@
+[
+    {
+        "date": "2023-02-25",
+        "items": [
+            {
+                "id": 1,
+                "type": "like",
+                "message": "John liked your post.",
+                "timestamp": "2023-02-25T09:15:00.000Z",
+                "read": false
+            },
+            {
+                "id": 2,
+                "type": "comment",
+                "message": "Jane commented on your post.",
+                "timestamp": "2023-02-25T11:30:00.000Z",
+                "read": false
+            },
+            {
+                "id": 3,
+                "type": "friend_request",
+                "message": "Mike sent you a friend request.",
+                "timestamp": "2023-02-25T14:45:00.000Z",
+                "read": false
+            }
+        ]
+    },
+    {
+        "date": "2023-02-24",
+        "items": [
+            {
+                "id": 4,
+                "type": "message",
+                "message": "You have a new message from Anna.",
+                "timestamp": "2023-02-24T09:10:00.000Z",
+                "read": true
+            },
+            {
+                "id": 5,
+                "type": "post",
+                "message": "Your friend Bob posted in a group you're in.",
+                "timestamp": "2023-02-24T14:30:00.000Z",
+                "read": true
+            }
+        ]
+    },
+    {
+        "date": "2023-02-23",
+        "items": [
+            {
+                "id": 6,
+                "type": "comment",
+                "message": "Jack commented on your photo.",
+                "timestamp": "2023-02-23T10:20:00.000Z",
+                "read": false
+            },
+            {
+                "id": 7,
+                "type": "message",
+                "message": "You have a new message from Tom.",
+                "timestamp": "2023-02-23T13:45:00.000Z",
+                "read": false
+            },
+            {
+                "id": 8,
+                "type": "friend_request",
+                "message": "Chris sent you a friend request.",
+                "timestamp": "2023-02-23T18:10:00.000Z",
+                "read": true
+            }
+        ]
+    },
+    {
+        "date": "2023-02-22",
+        "items": [
+            {
+                "id": 9,
+                "type": "like",
+                "message": "Sarah liked your photo.",
+                "timestamp": "2023-02-22T09:20:00.000Z",
+                "read": false
+            },
+            {
+                "id": 10,
+                "type": "comment",
+                "message": "Alex commented on your post.",
+                "timestamp": "2023-02-22T12:30:00.000Z",
+                "read": true
+            }
+        ]
+    },
+    {
+        "date": "2023-02-21",
+        "items": [
+            {
+                "id": 5,
+                "type": "post",
+                "message": "Your friend Bob posted in a group you're in.",
+                "timestamp": "2023-02-21T08:30:00.000Z",
+                "read": true
+            }
+        ]
+    }
+]

@@ -1,21 +1,16 @@
 <template>
     <div class="divide-y divider-gray-200 dark:divide-gray-700">
-        <div>
-            <time class="block px-5 pt-5 text-lg font-semibold text-gray-900 dark:text-white">January 13th, 2022</time>
+        <div v-for="group in notifications">
+            <time class="block px-5 pt-5 text-lg font-semibold text-gray-900 dark:text-white">{{ group.date }}</time>
             <ol class="py-5 pt-0 mt-3 divide-y divider-gray-200 dark:divide-gray-700">
-                <li>
+                <li v-for="item in group.items">
                     <a href="#" class="items-center block p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700">
                         <img class="w-12 h-12 mb-3 mr-3 rounded-full sm:mb-0"
                             src="https://pbs.twimg.com/profile_images/1604802383162269698/MbMxGgB7_400x400.jpg"
                             alt="Jese Leos image" />
                         <div class="text-gray-600 dark:text-gray-400">
-                            <div class="text-base font-normal"><span
-                                    class="font-medium text-gray-900 dark:text-white">Jese
-                                    Leos</span> likes <span class="font-medium text-gray-900 dark:text-white">Bonnie
-                                    Green's</span> post in <span class="font-medium text-gray-900 dark:text-white"> How
-                                    to
-                                    start
-                                    with Flowbite library</span></div>
+                            <div class="text-base font-normal"><span class="font-medium text-gray-900 dark:text-white">{{
+                                item.message }}</span></div>
                             <div class="text-sm font-normal">"I wanted to share a webinar zeroheight."</div>
                             <span class="inline-flex items-center text-xs font-normal text-gray-500 dark:text-gray-400">
                                 <svg aria-hidden="true" class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"
@@ -25,30 +20,6 @@
                                         clip-rule="evenodd"></path>
                                 </svg>
                                 Public
-                            </span>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="items-center block p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <img class="w-12 h-12 mb-3 mr-3 rounded-full sm:mb-0"
-                            src="https://pbs.twimg.com/profile_images/1604802383162269698/MbMxGgB7_400x400.jpg"
-                            alt="Bonnie Green image" />
-                        <div>
-                            <div class="text-base font-normal text-gray-600 dark:text-gray-400"><span
-                                    class="font-medium text-gray-900 dark:text-white">Bonnie Green</span> react to <span
-                                    class="font-medium text-gray-900 dark:text-white">Thomas Lean's</span> comment</div>
-                            <span class="inline-flex items-center text-xs font-normal text-gray-500 dark:text-gray-400">
-                                <svg aria-hidden="true" class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M3.707 2.293a1 1 0 00-1.414 1.414l14 14a1 1 0 001.414-1.414l-1.473-1.473A10.014 10.014 0 0019.542 10C18.268 5.943 14.478 3 10 3a9.958 9.958 0 00-4.512 1.074l-1.78-1.781zm4.261 4.26l1.514 1.515a2.003 2.003 0 012.45 2.45l1.514 1.514a4 4 0 00-5.478-5.478z"
-                                        clip-rule="evenodd"></path>
-                                    <path
-                                        d="M12.454 16.697L9.75 13.992a4 4 0 01-3.742-3.741L2.335 6.578A9.98 9.98 0 00.458 10c1.274 4.057 5.065 7 9.542 7 .847 0 1.669-.105 2.454-.303z">
-                                    </path>
-                                </svg>
-                                Private
                             </span>
                         </div>
                     </a>
@@ -64,8 +35,7 @@
                             src="https://pbs.twimg.com/profile_images/1604802383162269698/MbMxGgB7_400x400.jpg"
                             alt="Laura Romeros image" />
                         <div class="text-gray-600 dark:text-gray-400">
-                            <div class="text-base font-normal"><span
-                                    class="font-medium text-gray-900 dark:text-white">Laura
+                            <div class="text-base font-normal"><span class="font-medium text-gray-900 dark:text-white">Laura
                                     Romeros</span> likes <span class="font-medium text-gray-900 dark:text-white">Bonnie
                                     Green's</span> post in <span class="font-medium text-gray-900 dark:text-white"> How
                                     to
@@ -114,8 +84,7 @@
                             src="https://pbs.twimg.com/profile_images/1604802383162269698/MbMxGgB7_400x400.jpg"
                             alt="Jese Leos image" />
                         <div class="text-gray-600 dark:text-gray-400">
-                            <div class="text-base font-normal"><span
-                                    class="font-medium text-gray-900 dark:text-white">Jese
+                            <div class="text-base font-normal"><span class="font-medium text-gray-900 dark:text-white">Jese
                                     Leos</span> likes <span class="font-medium text-gray-900 dark:text-white">Bonnie
                                     Green's</span> post in <span class="font-medium text-gray-900 dark:text-white"> How
                                     to
@@ -165,5 +134,8 @@
             </ol>
         </div>
     </div>
-
 </template>
+
+<script setup>
+const { data: notifications } = useFetch("/api/notifications");
+</script>
