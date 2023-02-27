@@ -7,7 +7,7 @@
     --main-background: var(--dark-background);
     --main-search-background: var(--dark-search-background);
     --main-sidebar-background: var(--dark-sidebar-background);
-    --main-accent: var(--accent-green);
+    --main-accent: var(--accent-yellow);
 
     --dark-background: 0 0 0;
     --dim-background: 22 33 44;
@@ -21,7 +21,7 @@
     --dim-sidebar-background: 30 39 50;
     --light-sidebar-background: 247 249 249;
 
-    --accent-yellow: 255 213 0;
+    --accent-yellow: 229 125 15;
     --accent-blue: 29 155 240;
     --accent-pink: 249 26 130;
     --accent-purple: 120 87 255;
@@ -92,4 +92,15 @@
   }
 }
 
-:root.light {--main-background:var(--light-background); --main-search-background:var(--light-search-background); --main-sidebar-background:var(--light-sidebar-background); --main-accent:var(--accent-green);}
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+:root.light {--main-background:var(--light-background); --main-search-background:var(--light-search-background); --main-sidebar-background:var(--light-sidebar-background); --main-accent:var(--accent-yellow);}

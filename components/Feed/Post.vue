@@ -1,20 +1,21 @@
 <template>
   <article v-for="post in posts">
-    <a
+    <div
       class="accent-tab hover-card relative flex flex-col gap-y-4 px-4 py-3 outline-none border-b-2 border-dark-border dark:border-light-border">
       <div class="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1">
         <div class="flex flex-col items-center gap-2">
-          <div class="group relative self-start text-light-primary dark:text-dark-primary [&amp;>div]:translate-y-2"><a
-              class="blur-picture flex self-start" to="/@{{ post.author.username}}">
-              <figure style="width: 48px;">
+          <div class="group relative self-start text-light-primary dark:text-dark-primary [&amp;>div]:translate-y-2">
+            <NuxtLink class="blur-picture flex self-start" :to="`/@${post.user.username}`">
+              <figure class="w-12">
                 <span
-                  style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                    alt="{{ post.author.name}}" :src="post.author.avatar" class="rounded-full object-cover" sizes="100vw"
-                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
+                  class="box-border block overflow-hidden w-[initial] h-[initial] opacity-100 relative m-0 p-0 border-0">
+                  <span
+                    class="box-border block w-[initial] h-[initial] opacity-100 m-0 pt-[100%] pb-0 px-0 border-0"></span><img
+                    alt="{{ post.user.name}}" :src="post.user.avatar"
+                    class="rounded-full object-cover absolute box-border block w-0 h-0 min-w-full max-w-full min-h-full max-h-full m-auto p-0 border-[none] inset-0"></span>
               </figure>
-            </a>
-            <MiniCardsUser />
+            </NuxtLink>
+            <MiniCardsUser :user="post.user" />
           </div>
         </div>
         <div class="flex min-w-0 flex-col">
@@ -24,22 +25,24 @@
                 class="group relative self-start text-light-primary dark:text-dark-primary grid [&amp;>div]:translate-y-7">
                 <NuxtLink
                   class="flex items-center gap-1 truncate font-bold custom-underline text-light-primary dark:text-dark-primary"
-                  to="/@{{ post.author.username}}">
-                  <p class="truncate">{{ post.author.name }}</p><i><svg xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="fill-accent-blue h-5 w-5">
+                  :to="`/@${post.user.username}`">
+                  <p class="truncate">{{ post.user.name }}</p>
+                  <i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                      class="fill-accent-blue h-5 w-5">
                       <path fill-rule="evenodd"
                         d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
                         clip-rule="evenodd"></path>
-                    </svg></i>
+                    </svg>
+                  </i>
                 </NuxtLink>
-                <MiniCardsUser />
+                <MiniCardsUser :user="post.user" />
               </div>
               <div
                 class="group relative self-start text-light-primary dark:text-dark-primary grid [&amp;>div]:translate-y-7">
-                <NuxtLink class="truncate text-light-secondary dark:text-dark-secondary" tabindex="-1"
-                  to="/@{{ post.author.username}}">
-                  @{{ post.author.username }}</NuxtLink>
-                <MiniCardsUser />
+                <NuxtLink class="truncate text-light-secondary dark:text-dark-secondary" :to="`/@${post.user.username}`">
+                  @{{ post.user.username }}</NuxtLink>
+                <MiniCardsUser :user="post.user" />
               </div>
               <div class="flex gap-1"><i>·</i>
                 <div class="group relative">
@@ -52,10 +55,10 @@
               </div>
             </div>
             <div class="px-4">
-              <div data-headlessui-state="">
+              <div>
                 <button
                   class="custom-button main-tab main-tab group group absolute top-2 right-2 p-2 hover:bg-accent-blue/10 focus-visible:bg-accent-blue/10 focus-visible:!ring-accent-blue/80 active:bg-accent-blue/20"
-                  id="headlessui-popover-button-:r3p:" aria-expanded="false" data-headlessui-state="" type="button">
+                  type="button">
                   <div class="group relative">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                       stroke="currentColor" aria-hidden="true"
@@ -98,7 +101,9 @@
                     <span>Repost</span>
                   </div>
                 </i>
-                <div class="overflow-hidden"></div>
+                <div class="overflow-hidden">
+                  <p class="text-sm" style="opacity: 1; transform: none;">1</p>
+                </div>
               </button>
               <button
                 class="group flex items-center gap-1.5 p-0 transition-none disabled:cursor-not-allowed inner:transition inner:duration-200 hover:text-accent-pink focus-visible:text-accent-pink">
@@ -110,7 +115,9 @@
                     <span>Like</span>
                   </div>
                 </i>
-                <div class="overflow-hidden"></div>
+                <div class="overflow-hidden">
+                  <p class="text-sm" style="opacity: 1; transform: none;">1</p>
+                </div>
               </button>
               <button
                 class="group flex items-center gap-1.5 p-0 transition-none disabled:cursor-not-allowed inner:transition inner:duration-200 hover:text-accent-pink focus-visible:text-accent-pink">
@@ -122,13 +129,12 @@
                     <span>Share</span>
                   </div>
                 </i>
-                <div class="overflow-hidden"></div>
               </button>
             </div>
           </div>
         </div>
       </div>
-    </a>
+    </div>
   </article>
 </template>
 

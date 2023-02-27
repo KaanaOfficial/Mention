@@ -15,7 +15,7 @@
           <NuxtLink class="group py-1 outline-none flex" :class="{ 'hidden xs:flex': item.showInMobile == null }"
             v-for="item in menu" :key="item" :to="item.link">
             <div
-              class="custom-button flex items-center justify-center gap-4 self-start p-2 text-xl transition duration-200 group-hover:bg-light-primary/10 group-focus-visible:ring-2 group-focus-visible:ring-[#878a8c] dark:group-hover:bg-dark-primary/10 dark:group-focus-visible:ring-white xs:p-3 xl:pr-5">
+              class="custom-button flex items-center justify-center gap-4 self-start p-2 text-xl transition duration-200 group-hover:bg-main-accent/10 group-focus-visible:ring-2 group-focus-visible:ring-[#878a8c] dark:group-focus-visible:ring-white xs:p-3 xl:pr-5">
               <Icon :name="item.icon" size="25" class="h-7 w-7" />
               <p class="hidden xl:block">{{ item.name }}</p>
             </div>
@@ -60,44 +60,44 @@
             <a class="blur-picture flex self-start pointer-events-none" tabindex="-1" to="">
               <figure class="w-[40px]">
                 <span style="
-                                      box-sizing: border-box;
-                                      display: block;
-                                      overflow: hidden;
-                                      width: initial;
-                                      height: initial;
-                                      background: none;
-                                      opacity: 1;
-                                      border: 0px;
-                                      margin: 0px;
-                                      padding: 0px;
-                                      position: relative;
-                                    "><span style="
-                                        box-sizing: border-box;
-                                        display: block;
-                                        width: initial;
-                                        height: initial;
-                                        background: none;
-                                        opacity: 1;
-                                        border: 0px;
-                                        margin: 0px;
-                                        padding: 100% 0px 0px;
-                                      "></span><img alt="Albert Isern Alvarez"
+                                            box-sizing: border-box;
+                                            display: block;
+                                            overflow: hidden;
+                                            width: initial;
+                                            height: initial;
+                                            background: none;
+                                            opacity: 1;
+                                            border: 0px;
+                                            margin: 0px;
+                                            padding: 0px;
+                                            position: relative;
+                                          "><span style="
+                                              box-sizing: border-box;
+                                              display: block;
+                                              width: initial;
+                                              height: initial;
+                                              background: none;
+                                              opacity: 1;
+                                              border: 0px;
+                                              margin: 0px;
+                                              padding: 100% 0px 0px;
+                                            "></span><img alt="Albert Isern Alvarez"
                     src="https://pbs.twimg.com/profile_images/1604802383162269698/MbMxGgB7_400x400.jpg" decoding="async"
                     data-nimg="responsive" class="rounded-full object-cover" style="
-                                        position: absolute;
-                                        inset: 0px;
-                                        box-sizing: border-box;
-                                        padding: 0px;
-                                        border: none;
-                                        margin: auto;
-                                        display: block;
-                                        width: 0px;
-                                        height: 0px;
-                                        min-width: 100%;
-                                        max-width: 100%;
-                                        min-height: 100%;
-                                        max-height: 100%;
-                                      " sizes="100vw" /></span>
+                                              position: absolute;
+                                              inset: 0px;
+                                              box-sizing: border-box;
+                                              padding: 0px;
+                                              border: none;
+                                              margin: auto;
+                                              display: block;
+                                              width: 0px;
+                                              height: 0px;
+                                              min-width: 100%;
+                                              max-width: 100%;
+                                              min-height: 100%;
+                                              max-height: 100%;
+                                            " sizes="100vw" /></span>
               </figure>
             </a>
             <div class="hidden truncate text-start leading-5 xl:block">

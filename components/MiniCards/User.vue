@@ -12,13 +12,13 @@
                     <div class="mb-10">
                         <NuxtLink
                             class="blur-picture flex self-start absolute -translate-y-1/2 bg-main-background hover:brightness-100 [&amp;>figure>span]:[transition:200ms] [&amp;:hover>figure>span]:brightness-75 border-2 border-dark-border dark:border-light-border"
-                            to="/@albert">
-                            <figure style="width: 74px;">
+                            :to="`/@${user.username}`">
+                            <figure class="w-[74px]">
                                 <span
                                     class="box-border block overflow-hidden w-[initial] h-[initial] opacity-100 relative m-0 p-0 border-0">
                                     <span
                                         class="box-border block w-[initial] h-[initial] opacity-100 m-0 pt-[100%] pb-0 px-0 border-0"></span><img
-                                        alt="Albert Isern Alvarez"
+                                        alt="{{ user.name }}"
                                         src="https://pbs.twimg.com/profile_images/1604802383162269698/MbMxGgB7_400x400.jpg"
                                         class="rounded-full object-cover absolute box-border block w-0 h-0 min-w-full max-w-full min-h-full max-h-full m-auto p-0 border-[none] inset-0"></span>
                             </figure>
@@ -30,8 +30,8 @@
                 </div>
                 <div>
                     <NuxtLink class="flex items-center gap-1 truncate font-bold custom-underline -mb-1 text-lg" tabindex="0"
-                        to="/@albert">
-                        <p class="truncate">Albert Isern Alvarez</p><i><svg xmlns="http://www.w3.org/2000/svg"
+                        :to="`/@${user.username}`">
+                        <p class="truncate">{{ user.name }}</p><i><svg xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="fill-accent-blue h-5 w-5">
                                 <path fill-rule="evenodd"
                                     d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
@@ -40,27 +40,22 @@
                     </NuxtLink>
                     <div class="flex items-center gap-1 text-light-secondary dark:text-dark-secondary">
                         <NuxtLink class="truncate text-light-secondary dark:text-dark-secondary" tabindex="-1"
-                            to="/@albert">
-                            @albert</NuxtLink>
+                            :to="`/@${user.username}`">
+                            @{{ user.username }}</NuxtLink>
                     </div>
                 </div>
             </div>
-            <div class="mb-1 leading-tight text-gray-700">
-                Husband, father of two, independent open source developer. Creator /
-                project lead of
-                <a href="#" class="text-blue-400 hover:underline">@vuejs</a> and
-                connoisseur of sushi.
-            </div>
+            <div class="mb-1 leading-tight" v-if="user.bio" v-html="user.bio"></div>
             <div class="text-secondary flex gap-4">
                 <NuxtLink
                     class="hover-animation flex h-4 items-center gap-1 border-b border-b-transparent outline-none hover:border-b-light-primary focus-visible:border-b-light-primary dark:hover:border-b-dark-primary dark:focus-visible:border-b-dark-primary"
-                    to="/@albert/following">
+                    to="/@{{ user.username }}/following">
                     <p class="font-bold">2</p>
                     <p class="text-light-secondary dark:text-dark-secondary">Following</p>
                 </NuxtLink>
                 <NuxtLink
                     class="hover-animation flex h-4 items-center gap-1 border-b border-b-transparent outline-none hover:border-b-light-primary focus-visible:border-b-light-primary dark:hover:border-b-dark-primary dark:focus-visible:border-b-dark-primary"
-                    to="/@albert/followers">
+                    to="/@{{ user.username }}/followers">
                     <p class="font-bold">2</p>
                     <p class="text-light-secondary dark:text-dark-secondary">Followers</p>
                 </NuxtLink>
@@ -83,3 +78,12 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    name: "user-card",
+    props: {
+        user: Object,
+    },
+};
+</script>

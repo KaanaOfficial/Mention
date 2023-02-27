@@ -5,10 +5,10 @@
   </button>
   <div class="z-10 fixed" v-if="isOpen" @close="setIsOpen">
     <div class="fixed inset-0 flex items-center justify-center p-4">
-      <div class="hover-animation fixed inset-0 bg-black/40 dark:bg-[#5B7083]/40" aria-hidden="true"
-        data-projection-id="2" style="opacity: 1"></div>
+      <div class="hover-animation fixed inset-0 bg-black/40" aria-hidden="true" data-projection-id="2" style="opacity: 1">
+      </div>
       <div class="overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-        <div class="hover-animation fixed inset-0 bg-black/40 dark:bg-[#5B7083]/40"></div>
+        <div class="hover-animation fixed inset-0 bg-black/40"></div>
         <div class="fixed inset-0 flex items-center justify-center p-4">
           <div
             class="max-w-xl max-h-[calc(100vh-4rem)] overflow-auto bg-main-background w-full p-8 rounded-2xl hover-animation border-2 border-dark-border dark:border-light-border"
@@ -23,11 +23,11 @@
                 class="hover-animation mx-8 rounded-2xl px-4 py-3 border-2 border-dark-border dark:border-light-border">
                 <div class="grid grid-cols-[auto,1fr] gap-3">
                   <NuxtLink class="blur-picture flex self-start pointer-events-none" tabindex="-1" to="/home">
-                    <figure style="width: 48px">
+                    <figure class="w-12">
                       <span
                         class="box-border block overflow-hidden w-auto h-auto bg-transparent opacity-100 border-0 m-0 p-0 relative">
-                        <span class="box-border block w-auto h-auto bg-transparent opacity-100 border-0 m-0"
-                          style="padding: 100% 0px 0px;"></span>
+                        <span
+                          class="box-border block w-auto h-auto bg-transparent opacity-100 border-0 m-0 pt-[100%] pb-0 px-0"></span>
                         <img alt="Mention" src="~/assets/images/Logo/Logo.png" decoding="async" data-nimg="responsive"
                           class="rounded-full object-cover absolute inset-0 box-border p-0 border-0 m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full" /></span>
                     </figure>
@@ -111,7 +111,7 @@
               </div>
               <ChangeLanguage />
               <button
-                class="custom-button main-tab bg-main-accent px-4 py-1.5 font-bold text-white hover:bg-main-accent/90 active:bg-main-accent/75"
+                class="custom-button main-tab bg-main-accent px-4 py-1.5 font-bold text-accent hover:bg-main-accent/90 active:bg-main-accent/75 border-2 border-dark-border dark:border-light-border"
                 type="button" @click="setIsOpen(false)">{{ $t('buttons.done') }}</button>
             </div>
           </div>

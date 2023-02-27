@@ -1,11 +1,12 @@
 [
   {
     "id": 1,
-    "author": {
+    "user": {
       "id": 1,
       "name": "John Doe",
       "username": "johndoe",
-      "avatar": "https://via.placeholder.com/150"
+      "avatar": "https://via.placeholder.com/150",
+      "bio": "I'm a software developer!"
     },
     "content": "Hey everyone, check out my new blog post!",
     "media": {
@@ -18,11 +19,12 @@
   },
   {
     "id": 2,
-    "author": {
+    "user": {
       "id": 2,
       "name": "Jane Smith",
       "username": "janesmith",
-      "avatar": "https://via.placeholder.com/150"
+      "avatar": "https://via.placeholder.com/150",
+      "bio": "I'm a software developer!"
     },
     "content": "Just had the best meal at this new restaurant!",
     "media": {
@@ -35,11 +37,12 @@
   },
   {
     "id": 3,
-    "author": {
+    "user": {
       "id": 3,
       "name": "Bob Johnson",
       "username": "bobjohnson",
-      "avatar": "https://via.placeholder.com/150"
+      "avatar": "https://via.placeholder.com/150",
+      "bio": "I'm a software developer!"
     },
     "content": "I can't believe it's already Friday!",
     "media": null,
@@ -49,11 +52,12 @@
   },
   {
     "id": 4,
-    "author": {
+    "user": {
       "id": 4,
       "name": "Sally Jones",
       "username": "sallyjones",
-      "avatar": "https://via.placeholder.com/150"
+      "avatar": "https://via.placeholder.com/150",
+      "bio": "I'm a software developer!"
     },
     "content": "I'm so excited to see my favorite band next week!",
     "media": {
@@ -66,11 +70,12 @@
   },
   {
     "id": 5,
-    "author": {
+    "user": {
       "id": 5,
       "name": "Jane Smith",
       "username": "janesmith",
-      "avatar": "https://via.placeholder.com/150"
+      "avatar": "https://via.placeholder.com/150",
+      "bio": "I'm a software developer!"
     },
     "content": "Just had the best meal at this new restaurant!",
     "media": {

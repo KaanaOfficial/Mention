@@ -1,8 +1,7 @@
 <template>
-  <main
-    class="hover-animation flex min-h-screen w-full max-w-xl flex-col border-x-0 border-light-border pb-96 dark:border-dark-border xs:border-x">
+  <main class="hover-animation flex min-h-screen w-full max-w-xl flex-col pb-96 dark:border-dark-border">
     <header
-      class="hover-animation even z-10 bg-main-background/60 px-4 py-2 backdrop-blur-md sticky top-0 flex items-center gap-6">
+      class="hover-animation even z-10 bg-main-background/60 px-4 py-2 backdrop-blur-md sticky top-0 flex items-center gap-6 border-b-2 border-dark-border dark:border-light-border">
       <button
         class="custom-button main-tab dark-bg-tab group relative p-2 hover:bg-light-primary/10 active:bg-light-primary/20 dark:hover:bg-dark-primary/10 dark:active:bg-dark-primary/20"
         type="button">
@@ -15,21 +14,21 @@
           <span>Back</span>
         </div>
       </button>
-      <div class="-mb-1 truncate" data-projection-id="10" style="opacity: 1">
+      <div class="truncate" data-projection-id="10" style="opacity: 1">
         <NuxtLink class="flex items-center gap-1 truncate font-bold pointer-events-none -mt-1 text-xl" tabindex="-1"
           to="/@albert">
           <h2 class="truncate">Albert Isern Alvarez</h2>
         </NuxtLink>
         <p class="text-xs text-light-secondary dark:text-dark-secondary">
-          No Tweet
+          No post
         </p>
       </div>
     </header>
     <section data-projection-id="3" style="opacity: 1">
-      <div class="mt-0.5 h-36 xs:h-48 sm:h-52">
+      <div class="h-36 xs:h-48 sm:h-52 border-b-2 border-dark-border dark:border-light-border">
         <div class="h-full bg-light-line-reply dark:bg-dark-line-reply"></div>
       </div>
-      <div class="relative flex flex-col gap-3 px-4 py-3">
+      <div class="relative flex flex-col gap-2 px-4 py-3">
         <div class="flex justify-between">
           <div class="mb-8 xs:mb-14 sm:mb-16">
             <button
@@ -37,44 +36,19 @@
               type="button">
               <figure
                 class="hover-animation relative h-full w-full bg-main-background inner:!m-1 inner:rounded-full inner:transition inner:duration-200">
-                <span style="
-                    box-sizing: border-box;
-                    display: block;
-                    overflow: hidden;
-                    width: initial;
-                    height: initial;
-                    background: none;
-                    opacity: 1;
-                    border: 0px;
-                    margin: 0px;
-                    padding: 0px;
-                    position: absolute;
-                    inset: 0px;
-                  ">
+                <span
+                  class="box-border block overflow-hidden w-[initial] h-[initial] opacity-100 absolute m-0 p-0 border-0 inset-0">
                   <img alt="Albert Isern Alvarez" sizes="100vw"
                     src="https://pbs.twimg.com/profile_images/1604802383162269698/MbMxGgB7_400x400.jpg" decoding="async"
-                    data-nimg="fill" class="rounded-full object-cover" style="
-                      position: absolute;
-                      inset: 0px;
-                      box-sizing: border-box;
-                      padding: 0px;
-                      border: none;
-                      margin: auto;
-                      display: block;
-                      width: 0px;
-                      height: 0px;
-                      min-width: 100%;
-                      max-width: 100%;
-                      min-height: 100%;
-                      max-height: 100%;
-                    " />
+                    data-nimg="fill"
+                    class="rounded-full object-cover absolute box-border block w-0 h-0 min-w-full max-w-full min-h-full max-h-full m-auto p-0 border-[none] inset-0" />
                 </span>
               </figure>
             </button>
           </div>
           <form class="">
             <button
-              class="custom-button main-tab dark-bg-tab self-start border border-light-line-reply px-4 py-1.5 font-bold hover:bg-light-primary/10 active:bg-light-primary/20 dark:border-light-secondary dark:hover:bg-dark-primary/10 dark:active:bg-dark-primary/20"
+              class="custom-button main-tab bg-light-primary px-4 py-1.5 font-bold text-white hover:bg-light-primary/90 focus-visible:bg-light-primary/90 active:bg-light-border/75 dark:bg-light-border dark:text-light-primary dark:hover:bg-dark-border/90 dark:focus-visible:bg-dark-border/90 dark:active:bg-light-border/75"
               type="button">
               Edit profile
             </button>
@@ -136,15 +110,15 @@
       </div>
     </section>
     <nav
-      class="hover-animation flex justify-between overflow-y-auto border-b border-light-border dark:border-dark-border"
+      class="hover-animation flex justify-between whitespace-nowrap overflow-auto scrollbar-hide border-b-2 border-dark-border dark:border-light-border"
       data-projection-id="8" style="opacity: 1">
       <NuxtLink
         class="hover-animation main-tab dark-bg-tab flex flex-1 justify-center hover:bg-light-primary/10 dark:hover:bg-dark-primary/10"
         to="/@albert">
-        <div class="px-6 md:px-8">
+        <div class="px-4 md:px-6">
           <p
-            class="flex flex-col gap-3 whitespace-nowrap pt-3 font-bold transition-colors duration-200 text-light-primary dark:text-dark-primary [&amp;>i]:scale-100 [&amp;>i]:opacity-100">
-            Tweets
+            class="flex flex-col gap-2 whitespace-nowrap pt-3 font-bold transition-colors duration-200 text-light-primary dark:text-dark-primary [&amp;>i]:scale-100 [&amp;>i]:opacity-100">
+            Posts
             <i class="h-1 scale-50 rounded-full bg-main-accent opacity-0 transition duration-200"></i>
           </p>
         </div>
@@ -152,10 +126,21 @@
       <NuxtLink
         class="hover-animation main-tab dark-bg-tab flex flex-1 justify-center hover:bg-light-primary/10 dark:hover:bg-dark-primary/10"
         to="/@albert/with_replies">
-        <div class="px-6 md:px-8">
+        <div class="px-4 md:px-6">
           <p
-            class="flex flex-col gap-3 whitespace-nowrap pt-3 font-bold transition-colors duration-200 text-light-secondary dark:text-dark-secondary">
-            Tweets &amp; replies
+            class="flex flex-col gap-2 whitespace-nowrap pt-3 font-bold transition-colors duration-200 text-light-secondary dark:text-dark-secondary">
+            Posts & replies
+            <i class="h-1 scale-50 rounded-full bg-main-accent opacity-0 transition duration-200"></i>
+          </p>
+        </div>
+      </NuxtLink>
+      <NuxtLink
+        class="hover-animation main-tab dark-bg-tab flex flex-1 justify-center hover:bg-light-primary/10 dark:hover:bg-dark-primary/10"
+        to="/@albert/affiliates">
+        <div class="px-4 md:px-6">
+          <p
+            class="flex flex-col gap-2 whitespace-nowrap pt-3 font-bold transition-colors duration-200 text-light-secondary dark:text-dark-secondary">
+            Affiliates
             <i class="h-1 scale-50 rounded-full bg-main-accent opacity-0 transition duration-200"></i>
           </p>
         </div>
@@ -163,9 +148,9 @@
       <NuxtLink
         class="hover-animation main-tab dark-bg-tab flex flex-1 justify-center hover:bg-light-primary/10 dark:hover:bg-dark-primary/10"
         to="/@albert/media">
-        <div class="px-6 md:px-8">
+        <div class="px-4 md:px-6">
           <p
-            class="flex flex-col gap-3 whitespace-nowrap pt-3 font-bold transition-colors duration-200 text-light-secondary dark:text-dark-secondary">
+            class="flex flex-col gap-2 whitespace-nowrap pt-3 font-bold transition-colors duration-200 text-light-secondary dark:text-dark-secondary">
             Media
             <i class="h-1 scale-50 rounded-full bg-main-accent opacity-0 transition duration-200"></i>
           </p>
@@ -174,9 +159,9 @@
       <NuxtLink
         class="hover-animation main-tab dark-bg-tab flex flex-1 justify-center hover:bg-light-primary/10 dark:hover:bg-dark-primary/10"
         to="/@albert/likes">
-        <div class="px-6 md:px-8">
+        <div class="px-4 md:px-6">
           <p
-            class="flex flex-col gap-3 whitespace-nowrap pt-3 font-bold transition-colors duration-200 text-light-secondary dark:text-dark-secondary">
+            class="flex flex-col gap-2 whitespace-nowrap pt-3 font-bold transition-colors duration-200 text-light-secondary dark:text-dark-secondary">
             Likes
             <i class="h-1 scale-50 rounded-full bg-main-accent opacity-0 transition duration-200"></i>
           </p>
@@ -189,10 +174,10 @@
           <div class="flex flex-col items-center gap-6">
             <div class="flex flex-col gap-2 text-center">
               <p class="text-3xl font-extrabold">
-                @AlbertIsernAl hasn't tweeted
+                @AlbertIsernAl hasn't posted
               </p>
               <p class="text-light-secondary dark:text-dark-secondary">
-                When they do, their Tweets will show up here.
+                When they do, their posts will show up here.
               </p>
             </div>
           </div>
