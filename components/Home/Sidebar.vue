@@ -1,5 +1,5 @@
 <template>
-  <header id="sidebar"
+  <header
     class="flex w-0 shrink-0 transition-opacity duration-200 xs:w-20 md:w-24 md:w-20 lg:max-w-none xl:-mr-4 xl:w-full xl:max-w-xs xl:justify-end">
     <div
       class="fixed bottom-0 z-10 flex w-full flex-col justify-between border-t border-light-border bg-main-background py-0 dark:border-dark-border xs:top-0 xs:h-full xs:w-20 xs:border-0 xs:bg-transparent xs:px-2 xs:py-3 xs:pt-2 md:px-4 xl:w-72">
@@ -37,7 +37,7 @@
           </div>
         </nav>
         <NuxtLink to="/create"
-          class="custom-button mx-auto text-center main-tab accent-tab absolute right-4 -translate-y-[72px] bg-main-accent text-lg font-bold text-white outline-none transition hover:brightness-90 active:brightness-75 xs:static xs:translate-y-0 xs:hover:bg-main-accent/90 xs:active:bg-main-accent/75 xl:w-11/12"
+          class="custom-button mx-auto text-center main-tab accent-tab absolute right-4 -translate-y-[72px] bg-main-accent/70 text-lg font-bold text-accent outline-none transition hover:brightness-90 active:brightness-75 xs:static xs:translate-y-0 xs:hover:bg-main-accent/90 xs:active:bg-main-accent/75 xl:w-11/12 border-2 border-dark-border dark:border-light-border"
           type="button">
           <svg class="fill-current block h-6 w-6 xl:hidden" viewBox="0 0 24 24" aria-hidden="true">
             <g>
@@ -60,44 +60,44 @@
             <a class="blur-picture flex self-start pointer-events-none" tabindex="-1" to="">
               <figure class="w-[40px]">
                 <span style="
-                    box-sizing: border-box;
-                    display: block;
-                    overflow: hidden;
-                    width: initial;
-                    height: initial;
-                    background: none;
-                    opacity: 1;
-                    border: 0px;
-                    margin: 0px;
-                    padding: 0px;
-                    position: relative;
-                  "><span style="
-                      box-sizing: border-box;
-                      display: block;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0px;
-                      margin: 0px;
-                      padding: 100% 0px 0px;
-                    "></span><img alt="Albert Isern Alvarez"
+                                      box-sizing: border-box;
+                                      display: block;
+                                      overflow: hidden;
+                                      width: initial;
+                                      height: initial;
+                                      background: none;
+                                      opacity: 1;
+                                      border: 0px;
+                                      margin: 0px;
+                                      padding: 0px;
+                                      position: relative;
+                                    "><span style="
+                                        box-sizing: border-box;
+                                        display: block;
+                                        width: initial;
+                                        height: initial;
+                                        background: none;
+                                        opacity: 1;
+                                        border: 0px;
+                                        margin: 0px;
+                                        padding: 100% 0px 0px;
+                                      "></span><img alt="Albert Isern Alvarez"
                     src="https://pbs.twimg.com/profile_images/1604802383162269698/MbMxGgB7_400x400.jpg" decoding="async"
                     data-nimg="responsive" class="rounded-full object-cover" style="
-                      position: absolute;
-                      inset: 0px;
-                      box-sizing: border-box;
-                      padding: 0px;
-                      border: none;
-                      margin: auto;
-                      display: block;
-                      width: 0px;
-                      height: 0px;
-                      min-width: 100%;
-                      max-width: 100%;
-                      min-height: 100%;
-                      max-height: 100%;
-                    " sizes="100vw" /></span>
+                                        position: absolute;
+                                        inset: 0px;
+                                        box-sizing: border-box;
+                                        padding: 0px;
+                                        border: none;
+                                        margin: auto;
+                                        display: block;
+                                        width: 0px;
+                                        height: 0px;
+                                        min-width: 100%;
+                                        max-width: 100%;
+                                        min-height: 100%;
+                                        max-height: 100%;
+                                      " sizes="100vw" /></span>
               </figure>
             </a>
             <div class="hidden truncate text-start leading-5 xl:block">
