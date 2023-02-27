@@ -28,60 +28,66 @@
                             <input class="hidden" type="file" accept="image/*" multiple=""><button
                                 class="custom-button main-tab accent-tab accent-bg-tab group relative rounded-full p-2 hover:bg-main-accent/10 active:bg-main-accent/20"
                                 type="button">
-                                <Icon name="material-symbols:image-rounded"></Icon>
-                                <div class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
-                                                             text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
-                                                                 group-focus-visible:opacity-100 translate-y-3">
+                                <Icon name="material-symbols:image-rounded" size="22" />
+                                <div
+                                    class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
+                                                                                     text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
+                                                                                         group-focus-visible:opacity-100 translate-y-3">
                                     <span>Media</span>
                                 </div>
                             </button>
                             <button
                                 class="custom-button main-tab accent-tab accent-bg-tab group relative rounded-full p-2 hover:bg-main-accent/10 active:bg-main-accent/20"
                                 type="button" disabled="">
-                                <Icon name="material-symbols:gif-box-rounded"></Icon>
-                                <div class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
-                                                             text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
-                                                             group-focus-visible:opacity-100 translate-y-3">
+                                <Icon name="material-symbols:gif-box-rounded" size="22" />
+                                <div
+                                    class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
+                                                                                     text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
+                                                                                     group-focus-visible:opacity-100 translate-y-3">
                                     <span>GIF</span>
                                 </div>
                             </button>
                             <button
                                 class="custom-button main-tab accent-tab accent-bg-tab group relative rounded-full p-2 hover:bg-main-accent/10 active:bg-main-accent/20"
                                 type="button" disabled="">
-                                <Icon name="material-symbols:view-kanban-outline-rounded"></Icon>
-                                <div class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
-                                                         text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
-                                                             group-focus-visible:opacity-100 translate-y-3">
+                                <Icon name="material-symbols:view-kanban-outline-rounded" size="22" />
+                                <div
+                                    class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
+                                                                                 text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
+                                                                                     group-focus-visible:opacity-100 translate-y-3">
                                     <span>Poll</span>
                                 </div>
                             </button>
                             <button
                                 class="custom-button main-tab accent-tab accent-bg-tab group relative rounded-full p-2 hover:bg-main-accent/10 active:bg-main-accent/20"
                                 type="button" disabled="">
-                                <Icon name="material-symbols:sentiment-very-satisfied-outline"></Icon>
-                                <div class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
-                                                         text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
-                                                             group-focus-visible:opacity-100 translate-y-3">
+                                <Icon name="material-symbols:sentiment-very-satisfied-outline" size="22" />
+                                <div
+                                    class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
+                                                                                 text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
+                                                                                     group-focus-visible:opacity-100 translate-y-3">
                                     <span>Emoji</span>
                                 </div>
                             </button>
                             <button
                                 class="custom-button main-tab accent-tab accent-bg-tab group relative rounded-full p-2 hover:bg-main-accent/10 active:bg-main-accent/20"
                                 type="button" disabled="">
-                                <Icon name="material-symbols:schedule"></Icon>
-                                <div class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
-                                                         text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
-                                                             group-focus-visible:opacity-100 translate-y-3">
+                                <Icon name="material-symbols:schedule" size="22" />
+                                <div
+                                    class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
+                                                                                 text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
+                                                                                     group-focus-visible:opacity-100 translate-y-3">
                                     <span>Schedule</span>
                                 </div>
                             </button>
                             <button
                                 class="custom-button main-tab accent-tab accent-bg-tab group relative rounded-full p-2 hover:bg-main-accent/10 active:bg-main-accent/20"
                                 type="button" disabled="">
-                                <Icon name="material-symbols:location-on"></Icon>
-                                <div class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
-                                                         text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
-                                                             group-focus-visible:opacity-100 translate-y-3">
+                                <Icon name="material-symbols:location-on" size="22" />
+                                <div
+                                    class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
+                                                                                 text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
+                                                                                     group-focus-visible:opacity-100 translate-y-3">
                                     <span>Location</span>
                                 </div>
                             </button>
@@ -97,10 +103,12 @@
                                                 fill="none" stroke-width="2" r="9" stroke-linecap="round"
                                                 style="stroke-dashoffset: 56.5487; stroke-dasharray: 56.5487;"></circle>
                                         </svg></i><span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[45%]
-                                                           scale-50 text-xs opacity-0">280</span>
-                                    <div class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
-                                                         text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
-                                                             group-focus-visible:opacity-100 translate-y-3"><span>280
+                                                                                   scale-50 text-xs opacity-0">280</span>
+                                    <div
+                                        class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
+                                                                                 text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
+                                                                                     group-focus-visible:opacity-100 translate-y-3">
+                                        <span>280
                                             characters
                                             remaining</span>
                                     </div>
@@ -112,9 +120,10 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15">
                                         </path>
                                     </svg>
-                                    <div class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
-                                                         text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
-                                                             group-focus-visible:opacity-100 translate-y-3">
+                                    <div
+                                        class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
+                                                                                 text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
+                                                                                     group-focus-visible:opacity-100 translate-y-3">
                                         <span>Add</span>
                                     </div>
                                 </button>
@@ -124,6 +133,7 @@
                         </div>
                     </div>
                 </div>
-        </label>
-    </form>
-</div></template>
+            </label>
+        </form>
+    </div>
+</template>
