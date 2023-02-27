@@ -7,7 +7,7 @@
     --main-background: var(--dark-background);
     --main-search-background: var(--dark-search-background);
     --main-sidebar-background: var(--dark-sidebar-background);
-    --main-accent: var(--accent-blue);
+    --main-accent: var(--accent-green);
 
     --dark-background: 0 0 0;
     --dim-background: 22 33 44;
@@ -92,4 +92,4 @@
   }
 }
 
-:root.light {--main-background:var(--light-background); --main-search-background:var(--light-search-background); --main-sidebar-background:var(--light-sidebar-background); --main-accent:var(--accent-blue);}
+:root.light {--main-background:var(--light-background); --main-search-background:var(--light-search-background); --main-sidebar-background:var(--light-sidebar-background); --main-accent:var(--accent-green);}
