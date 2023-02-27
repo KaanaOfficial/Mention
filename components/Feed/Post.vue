@@ -1,7 +1,7 @@
 <template>
   <article v-for="post in posts">
     <a
-      class="accent-tab hover-card relative flex flex-col gap-y-4 px-4 py-3 outline-none border-b border-light-border dark:border-dark-border">
+      class="accent-tab hover-card relative flex flex-col gap-y-4 px-4 py-3 outline-none border-b-2 border-dark-border dark:border-light-border">
       <div class="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1">
         <div class="flex flex-col items-center gap-2">
           <div class="group relative self-start text-light-primary dark:text-dark-primary [&amp;>div]:translate-y-2"><a
@@ -14,10 +14,7 @@
                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
               </figure>
             </a>
-            <div
-              class="menu-container invisible absolute left-1/2 w-72 -translate-x-1/2 rounded-2xl opacity-0 [transition:visibility_0ms_ease_400ms,opacity_200ms_ease_200ms] group-hover:visible group-hover:opacity-100 group-hover:delay-500">
-              <MiniCardsUser />
-            </div>
+            <MiniCardsUser />
           </div>
         </div>
         <div class="flex min-w-0 flex-col">
@@ -35,20 +32,14 @@
                         clip-rule="evenodd"></path>
                     </svg></i>
                 </NuxtLink>
-                <div
-                  class="menu-container invisible absolute left-1/2 w-72 -translate-x-1/2 rounded-2xl opacity-0 [transition:visibility_0ms_ease_400ms,opacity_200ms_ease_200ms] group-hover:visible group-hover:opacity-100 group-hover:delay-500">
-                  <MiniCardsUser />
-                </div>
+                <MiniCardsUser />
               </div>
               <div
                 class="group relative self-start text-light-primary dark:text-dark-primary grid [&amp;>div]:translate-y-7">
                 <NuxtLink class="truncate text-light-secondary dark:text-dark-secondary" tabindex="-1"
                   to="/@{{ post.author.username}}">
                   @{{ post.author.username }}</NuxtLink>
-                <div
-                  class="menu-container invisible absolute left-1/2 w-72 -translate-x-1/2 rounded-2xl opacity-0 [transition:visibility_0ms_ease_400ms,opacity_200ms_ease_200ms] group-hover:visible group-hover:opacity-100 group-hover:delay-500">
-                  <MiniCardsUser />
-                </div>
+                <MiniCardsUser />
               </div>
               <div class="flex gap-1"><i>·</i>
                 <div class="group relative">
