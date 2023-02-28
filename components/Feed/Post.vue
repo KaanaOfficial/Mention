@@ -1,5 +1,5 @@
 <template>
-  <article v-for="post in posts">
+  <article>
     <div
       class="accent-tab hover-card relative flex flex-col gap-y-4 px-4 py-3 outline-none border-b-2 border-dark-border dark:border-light-border">
       <div class="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1">
@@ -26,7 +26,7 @@
                 <NuxtLink
                   class="flex items-center gap-1 truncate font-bold custom-underline text-light-primary dark:text-dark-primary"
                   :to="`/@${post.user.username}`">
-                  <p class="truncate">{{ post.user.name }}</p>
+                  <p class="truncate">{{ post.user.name.first }} {{ post.user.name.last }}</p>
                   <i>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
                       class="fill-accent-blue h-5 w-5">
@@ -46,7 +46,7 @@
               </div>
               <div class="flex gap-1"><i>·</i>
                 <div class="group relative">
-                  <NuxtLink class="custom-underline peer whitespace-nowrap" to="/post/{{ post.id }}">23 Feb</NuxtLink>
+                  <NuxtLink class="custom-underline peer whitespace-nowrap" :to="`/p/${post.id}`">23 Feb</NuxtLink>
                   <div
                     class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible group-focus-visible:opacity-100 translate-y-1 peer-focus:opacity-100 peer-focus-visible:visible peer-focus-visible:delay-200">
                     <span>16:31 · 23 Feb 2023</span>
@@ -76,7 +76,7 @@
               </div>
             </div>
           </div>
-          <p class="whitespace-pre-line break-words">{{ post.content }}</p>
+          <p class="whitespace-pre-line break-words">{{ post.content.text }}</p>
           <div class="mt-1 flex flex-col gap-2">
             <div class="flex text-light-secondary inner:outline-none dark:text-dark-secondary max-w-md justify-between">
               <button
@@ -138,6 +138,11 @@
   </article>
 </template>
 
-<script setup>
-const { data: posts } = useFetch("/api/posts");
+<script>
+export default {
+  name: "post",
+  props: {
+    post: Object,
+  },
+};
 </script>

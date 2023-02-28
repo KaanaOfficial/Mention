@@ -29,6 +29,7 @@ export default defineNuxtConfig({
     "@nuxtjs/supabase",
     "@nuxtjs/i18n",
     "nuxt-icon",
+    "@vant/nuxt",
     "nuxt-headlessui",
     [
       "@pinia/nuxt",
@@ -89,6 +90,9 @@ export default defineNuxtConfig({
   css: ["@/assets/css/main.css", "@/assets/css/main.scss"],
   headlessui: {
     prefix: "Headless",
+  },
+  vant: {
+    lazyload: true,
   },
   colorMode: {
     preference: "system", // default value of $colorMode.preference

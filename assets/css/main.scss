@@ -38,7 +38,13 @@
 
   body {
     @apply hover-animation bg-main-background text-light-primary dark:text-dark-primary;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
   }
+
+  body::-webkit-scrollbar {
+    display: none;
+}
 }
 
 @layer components {

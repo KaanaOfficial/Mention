@@ -10,7 +10,7 @@
     </div>
     <!-- Follow and trends -->
     <aside class="flex w-96 flex-col gap-4 px-4 py-3 pt-1 hidden md:block">
-      <HomeSearch />
+      <UiSearch />
       <HomeWidgetsTrends />
       <Footer />
     </aside>
