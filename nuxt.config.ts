@@ -29,7 +29,6 @@ export default defineNuxtConfig({
     "@nuxtjs/supabase",
     "@nuxtjs/i18n",
     "nuxt-icon",
-    "@vant/nuxt",
     "nuxt-headlessui",
     [
       "@pinia/nuxt",
