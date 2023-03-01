@@ -2,7 +2,7 @@
   <main class="hover-animation flex min-h-screen w-full max-w-xl flex-col pb-96 dark:border-dark-border">
     <header
       class="hover-animation even z-10 bg-main-background/60 px-4 py-2 backdrop-blur-md sticky top-0 flex items-center gap-6 border-b-2 border-dark-border dark:border-light-border">
-      <button
+      <button @click="goBack"
         class="custom-button main-tab dark-bg-tab group relative p-2 hover:bg-light-primary/10 active:bg-light-primary/20 dark:hover:bg-dark-primary/10 dark:active:bg-dark-primary/20"
         type="button">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -32,12 +32,11 @@
         <div class="flex justify-between">
           <div class="mb-8 xs:mb-14 sm:mb-16">
             <button
-              class="custom-button main-tab accent-tab absolute -mt-3 aspect-square w-24 -translate-y-1/2 overflow-hidden p-0 disabled:cursor-auto disabled:opacity-100 xs:w-32 sm:w-36 [&amp;:hover>figure>span]:brightness-75"
+              class="custom-button main-tab accent-tab absolute -mt-3 aspect-square w-24 -translate-y-1/2 overflow-hidden p-0 disabled:cursor-auto disabled:opacity-100 xs:w-32 sm:w-36 [&amp;:hover>figure>span]:brightness-75 border-2 border-dark-border dark:border-light-border"
               type="button">
               <figure
-                class="hover-animation relative h-full w-full bg-main-background inner:!m-1 inner:rounded-full inner:transition inner:duration-200">
-                <span
-                  class="box-border block overflow-hidden w-[initial] h-[initial] opacity-100 absolute m-0 p-0 border-0 inset-0">
+                class="hover-animation relative h-full w-full bg-main-background inner:rounded-full inner:transition inner:duration-200">
+                <span class="box-border block overflow-hidden w-full h-full opacity-100 absolute">
                   <img alt="Albert Isern Alvarez" sizes="100vw"
                     src="https://pbs.twimg.com/profile_images/1604802383162269698/MbMxGgB7_400x400.jpg" decoding="async"
                     data-nimg="fill"
@@ -173,3 +172,23 @@
     </section>
   </main>
 </template>
+
+
+<script>
+export default defineComponent({
+  setup() {
+    const store = useMentionStore()
+    const router = useRouter()
+    const route = useRoute()
+
+    // Define function to go back to previous page
+    const goBack = () => {
+      router.go(-1)
+    }
+
+    return {
+      goBack,
+    }
+  },
+})
+</script>
