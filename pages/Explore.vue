@@ -14,7 +14,7 @@
                 </div>
             </button>
             <div class="flex gap-8">
-                <h2 class="text-xl font-bold">Search</h2>
+                <h2 class="text-xl font-bold">Explore</h2>
             </div>
         </div>
         <UiSearch :search="search" class="flex-1" />
