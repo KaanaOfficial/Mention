@@ -1,7 +1,7 @@
 <template>
    <form class="hover-animation sticky top-0 z-10 -my-2 bg-main-background py-2">
       <label
-         class="group flex items-center justify-between gap-4 rounded-full bg-main-accent/10 px-4 py-2 transition focus-within:bg-main-background focus-within:ring-2 focus-within:ring-main-accent border-2 border-dark-border dark:border-light-border">
+         class="group flex items-center justify-between gap-3 rounded-full bg-main-accent/10 px-4 py-2 transition focus-within:bg-main-background focus-within:ring-2 focus-within:ring-main-accent border-2 border-dark-border dark:border-light-border">
          <i>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                stroke="currentColor" aria-hidden="true"
