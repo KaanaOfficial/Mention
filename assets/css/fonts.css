@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Kaana Sans';
+    font-display: auto;
+    font-style: normal;
+    font-weight: 400;
+    src: url(/assets/fonts/ProductSans/ProductSans-Medium.ttf) format('truetype');
+    /* For IE6-8 */
+    src: local('Kaana Sans'), local('KaanaSansMedium'), url(/assets/fonts/ProductSans/ProductSans-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Kaana Sans';
+    font-display: auto;
+    font-style: bold;
+    font-weight: 500;
+    src: url(/assets/fonts/ProductSans/ProductSans-Medium.ttf) format('truetype');
+    /* For IE6-8 */
+    src: local('Kaana Sans'), local('KaanaSansMedium'), url(/assets/fonts/ProductSans/ProductSans-Medium.ttf) format('truetype');
+}
+
+html {
+    font-family: 'Kaana Sans', Helvetica Neue, Segoe UI, Helvetica, Arial, Lucida Grande, sans-serif;
+}
