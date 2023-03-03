@@ -48,7 +48,7 @@ export default defineComponent({
             last: '',
           },
           username: postUser.value.toLowerCase(),
-          avatar: `https://avatars.dicebear.com/api/micah/${Date.now()}.svg`,
+          avatar: `https://api.dicebear.com/5.x/micah/svg?seed=${Date.now()}`,
         },
         content: {
           text: postText.value,
