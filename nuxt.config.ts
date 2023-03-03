@@ -86,12 +86,13 @@ export default defineNuxtConfig({
   piniaPersistedstate: {
     storage: "cookies",
   },
-  css: ["@/assets/css/main.css", "@/assets/css/main.scss"],
+  css: [
+    "@/assets/css/main.scss",
+    "@/assets/css/basic.css",
+    "@/assets/css/fonts.css",
+  ],
   headlessui: {
     prefix: "Headless",
-  },
-  vant: {
-    lazyload: true,
   },
   colorMode: {
     preference: "system", // default value of $colorMode.preference
