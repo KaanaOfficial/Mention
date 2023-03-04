@@ -30,6 +30,7 @@ export const useMentionStore = defineStore({
             text: "Hi, Alice!",
           },
         ],
+        likes: [], // new property to keep track of likes
       },
     ],
     // Current user information
@@ -74,6 +75,19 @@ export const useMentionStore = defineStore({
         if (index !== -1) {
           post.replies.splice(index, 1);
         }
+      }
+    },
+
+    // Add a user to the likes array for a post
+    addLike(post, user) {
+      // Check if the user has already liked
+      const alreadyLiked = post.likes.some((like) => like.id === user.id);
+      if (!alreadyLiked) {
+        post.likes.push({
+          id: user.id,
+          name: user.name,
+          avatar: user.avatar,
+        });
       }
     },
 
