@@ -61,53 +61,19 @@
             <a class="blur-picture flex self-start pointer-events-none">
               <figure class="w-[40px]">
                 <span
-                  style="
-                                                                                                                            box-sizing: border-box;
-                                                                                                                            display: block;
-                                                                                                                            overflow: hidden;
-                                                                                                                            width: initial;
-                                                                                                                            height: initial;
-                                                                                                                            background: none;
-                                                                                                                            opacity: 1;
-                                                                                                                            border: 0px;
-                                                                                                                            margin: 0px;
-                                                                                                                            padding: 0px;
-                                                                                                                            position: relative;
-                                                                                                                          "><span
-                    style="
-                                                                                                                              box-sizing: border-box;
-                                                                                                                              display: block;
-                                                                                                                              width: initial;
-                                                                                                                              height: initial;
-                                                                                                                              background: none;
-                                                                                                                              opacity: 1;
-                                                                                                                              border: 0px;
-                                                                                                                              margin: 0px;
-                                                                                                                              padding: 100% 0px 0px;
-                                                                                                                            "></span><img
+                  style=" box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; ">
+                  <span
+                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
                     alt="Albert Isern Alvarez"
                     src="https://pbs.twimg.com/profile_images/1604802383162269698/MbMxGgB7_400x400.jpg" decoding="async"
                     data-nimg="responsive" class="rounded-full object-cover"
-                    style="
-                                                                                                                              position: absolute;
-                                                                                                                              inset: 0px;
-                                                                                                                              box-sizing: border-box;
-                                                                                                                              padding: 0px;
-                                                                                                                              border: none;
-                                                                                                                              margin: auto;
-                                                                                                                              display: block;
-                                                                                                                              width: 0px;
-                                                                                                                              height: 0px;
-                                                                                                                              min-width: 100%;
-                                                                                                                              max-width: 100%;
-                                                                                                                              min-height: 100%;
-                                                                                                                              max-height: 100%;
-                                                                                                                            " sizes="100vw" /></span>
+                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; "
+                    sizes="100vw" /></span>
               </figure>
             </a>
             <div class="hidden truncate text-start leading-5 xl:block">
               <a class="flex items-center gap-1 truncate font-bold pointer-events-none start" tabindex="-1"
-                href="/user/AuronPlay#">
+                href="/@albert">
                 <p class="truncate">Albert Isern Alvarez</p>
               </a>
               <a class="truncate text-light-secondary dark:text-dark-secondary pointer-events-none">@AlbertIsernAl</a>
