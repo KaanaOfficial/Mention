@@ -3,7 +3,7 @@ export default defineNuxtPlugin(() => {
     "global-middleware",
     (to, from) => {
       const user = useSupabaseUser();
-      if (to.fullPath === "/profile" && user.value && user.value?.username) {
+      if (to.fullPath === "/profile") {
         return navigateTo("/@" + user.value?.username);
       }
     },
