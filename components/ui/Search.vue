@@ -12,7 +12,7 @@
          </i>
          <input
             class="peer flex-1 bg-transparent outline-none placeholder:text-light-secondary dark:placeholder:text-dark-secondary"
-            type="text" placeholder="Search anything">
+            type="text" :placeholder="$t('pages.search.search.placeholder')">
          <button
             class="custom-button main-tab accent-tab scale-50 bg-main-accent p-1 opacity-0 transition hover:brightness-90 disabled:opacity-0"
             type="button" disabled="">
