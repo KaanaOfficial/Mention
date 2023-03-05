@@ -18,6 +18,7 @@
         <NuxtLink class="flex items-center gap-1 truncate font-bold pointer-events-none -mt-1 text-xl" tabindex="-1"
           to="/@{{ user.username }}">
           <h2 class="truncate">{{ user.name.first }} {{ user.name.last }}</h2>
+          <Icon name="material-symbols:verified" class="text-main-accent h-5 w-5" />
         </NuxtLink>
         <p class="text-xs text-light-secondary dark:text-dark-secondary">
           No post
@@ -25,9 +26,17 @@
       </div>
     </header>
     <section data-projection-id="3" style="opacity: 1">
-      <div class="h-36 xs:h-48 sm:h-52 border-b-2 border-dark-border dark:border-light-border">
-        <div class="h-full bg-light-line-reply dark:bg-dark-line-reply"></div>
-      </div>
+      <div class="h-36 xs:h-48 sm:h-52 border-b-2 border-dark-border dark:border-light-border"><button
+          class="custom-button main-tab accent-tab relative h-full w-full rounded-none p-0 transition hover:brightness-75"
+          type="button">
+          <figure>
+            <span class="block absolute inset-0 overflow-hidden box-border bg-transparent opacity-100 border-0 m-0 p-0">
+              <img src="https://pbs.twimg.com/profile_banners/1904582695/1646871546/1500x500" decoding="async"
+                data-nimg="fill"
+                class="object-cover absolute inset-0 box-border p-0 border-0 m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full">
+            </span>
+          </figure>
+        </button></div>
       <div class="relative flex flex-col gap-2 p-2">
         <div class="flex justify-between">
           <div class="mb-8 xs:mb-14 sm:mb-16">
@@ -45,25 +54,76 @@
               </figure>
             </button>
           </div>
-          <form class="">
-            <button
-              class="custom-button main-tab bg-light-primary px-4 py-1.5 font-bold text-white hover:bg-light-primary/90 focus-visible:bg-light-primary/90 active:bg-light-border/75 dark:bg-light-border dark:text-light-primary dark:hover:bg-dark-border/90 dark:focus-visible:bg-dark-border/90 dark:active:bg-light-border/75"
-              type="button">
-              Edit profile
-            </button>
-          </form>
+          <div class="flex gap-2 self-start">
+            <div class="relative" data-headlessui-state="">
+              <button
+                class="custom-button main-tab dark-bg-tab group relative border border-light-line-reply p-2 hover:bg-light-primary/10 active:bg-light-primary/20 dark:border-light-secondary dark:hover:bg-dark-primary/10 dark:active:bg-dark-primary/20"
+                id="headlessui-popover-button-:r2cg:" aria-expanded="false" data-headlessui-state="" type="button"><svg
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" aria-hidden="true" class="h-5 w-5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z">
+                  </path>
+                </svg>
+                <div
+                  class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible group-focus-visible:opacity-100 translate-y-3">
+                  <span>More</span>
+                </div>
+              </button>
+            </div>
+            <NuxtLink
+              class="custom-button main-tab dark-bg-tab group relative cursor-not-allowed border border-light-line-reply p-2 hover:bg-light-primary/10 active:bg-light-primary/20 dark:border-light-secondary dark:hover:bg-dark-primary/10 dark:active:bg-dark-primary/20"
+              external="true" :to="`https://allo.kaana.io/@${user.username}`" target="_blank" rel="noreferrer"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" aria-hidden="true" class="h-5 w-5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75">
+                </path>
+              </svg>
+              <div
+                class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible group-focus-visible:opacity-100 translate-y-3">
+                <span>Chat</span>
+              </div>
+            </NuxtLink>
+            <UiButtonBlack type="submit">Follow</UiButtonBlack>
+          </div>
         </div>
         <div>
           <NuxtLink class="flex items-center gap-1 truncate font-bold pointer-events-none -mb-1 text-xl" tabindex="-1"
             to="/@{{ user.username }}">
             <p class="truncate font-bold text-2xl mb-1">{{ user.name.first }} {{ user.name.last }}</p>
+            <Icon name="material-symbols:verified" class="text-main-accent h-6 w-6" />
           </NuxtLink>
           <div class="flex items-center gap-1 text-light-secondary dark:text-dark-secondary">
             <p class="text-lg">@{{ user.username }}</p>
           </div>
           <div class="flex flex-col gap-2">
             <div class="flex flex-wrap gap-x-3 gap-y-1 text-light-secondary dark:text-dark-secondary">
-              <div class="flex items-center gap-1">
+              <div class="flex items-center gap-1" v-if="user.location">
+                <i>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" aria-hidden="true" class="h-5 w-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"></path>
+                  </svg>
+                </i>
+                <p class="font-medium">{{ user.location }}</p>
+              </div>
+              <div class="flex items-center gap-1" v-if="user.link">
+                <i>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" aria-hidden="true" class="h-5 w-5">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244">
+                    </path>
+                  </svg>
+                </i>
+                <NuxtLink class="custom-underline font-medium text-main-accent" external="true" :to="user.link.url"
+                  target="_blank" rel="noreferrer">{{ user.link.text }}
+                </NuxtLink>
+              </div>
+              <div class="flex items-center gap-1" v-if="user.signup_date">
                 <i>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" aria-hidden="true" class="h-5 w-5">
@@ -73,19 +133,19 @@
                   </svg>
                 </i>
                 <button class="custom-underline group relative">
-                  Joined February 2023
+                  {{ user.signup_date.formatted }}
                   <div
                     class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible group-focus-visible:opacity-100 translate-y-1">
-                    <span>00:15 · 10 Feb 2023</span>
+                    <span class="font-medium">{{ user.signup_date.date }}</span>
                   </div>
                 </button>
               </div>
             </div>
           </div>
-          <p class="status bg-main-accent/10">{{ user.status }}</p>
+          <p class="status bg-main-accent/10">{{ user.bio.formatted }}</p>
         </div>
         <div class="stats">
-          <NuxtLink v-for="stat in user.stats" :to="stat.link"
+          <NuxtLink v-for="stat in user.stats" v-show="stat.show" :to="stat.link"
             class="stat flex-col items-center mx-auto text-center bg-main-accent/20 text-accent outline-none transition hover:brightness-90 active:brightness-75 xs:static xs:translate-y-0 xs:hover:bg-main-accent/50 xs:active:bg-main-accent/75 border-2 border-dark-border dark:border-light-border">
             <p class="font-bold text-xl">{{ stat.value }}</p>
             <p>{{ stat.name }}</p>
@@ -173,48 +233,94 @@ export default defineComponent({
       },
       username: "albert",
       avatar: "https://avatars.githubusercontent.com/u/10274099?v=4",
-      status: `🐉💥🤙
+      location: "Barcelona, Spain",
+      signup_date: {
+        date: "2012-12-16 T00:00:00.000Z",
+        formatted: "December 16, 2012",
+      },
+      link: {
+        url: "https://albertisernalvarez.com",
+        text: "albertisernalvarez.com",
+      },
+      bio: {
+        text: `🐉💥🤙
 ❤️‍🔥 @abbxcafl
 🧨 CEO y fundador de Kaana
 👧 Athina's dad
 🪙 Co-fundador de FairCoin
 🌍 Viajes
 📱Pixel 6 Pro`,
+        formatted: `🐉💥🤙
+❤️‍🔥 @abbxcafl
+🧨 CEO y fundador de Kaana
+👧 Athina's dad
+🪙 Co-fundador de FairCoin
+🌍 Viajes
+📱Pixel 6 Pro`,
+      },
       stats: [
         {
+          show: true,
           name: 'Posts',
           value: "1.2K",
-          link: `/@${route.params.username}`,
+          link: {
+            url: `/@${route.params.username}`,
+            enabled: true,
+          },
         },
         {
+          show: true,
           name: 'Reposts',
           value: "732",
-          link: `/@${route.params.username}/reposts`,
+          link: {
+            url: `/@${route.params.username}/reposts`,
+            enabled: true,
+          },
         },
         {
+          show: true,
           name: 'Replies',
           value: "233",
-          link: `/@${route.params.username}/replies`,
+          link: {
+            url: `/@${route.params.username}/replies`,
+            enabled: true,
+          },
         },
         {
+          show: true,
           name: 'Karma',
           value: "51.4K",
-          link: `/@${route.params.username}/karma`,
+          link: {
+            url: `/@${route.params.username}/karma`,
+            enabled: false,
+          },
         },
         {
+          show: true,
           name: 'Reactions',
           value: "52",
-          link: `/@${route.params.username}/reactions`,
+          link: {
+            url: `/@${route.params.username}/reactions`,
+            enabled: false,
+          },
         },
         {
+          show: true,
           name: 'Following',
           value: "388",
-          link: `/@${route.params.username}/following`,
+          link: {
+            url: `/@${route.params.username}/following`,
+            enabled: true,
+          }
         },
         {
+          show: true,
           name: 'Followers',
           value: "23.4K",
-          link: `/@${route.params.username}/followers`,
+          link: {
+            url: `/@${route.params.username}/followers`,
+            enabled: true,
+          }
         },
       ]
 
