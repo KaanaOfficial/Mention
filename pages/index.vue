@@ -15,8 +15,7 @@
         <textarea id="post-text" v-model="postText"
           class="w-full border-gray-300 rounded-md shadow-sm py-1 px-2"></textarea>
       </div>
-      <button type="submit"
-        class="px-4 py-2 rounded-md bg-blue-600 text-white font-bold hover:bg-blue-700">Submit</button>
+      <UiButton type="submit" class="my-button">{{ $t('buttons.post') }}</UiButton>
     </form>
   </div>
 </template>
