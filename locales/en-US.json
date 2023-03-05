@@ -5,9 +5,24 @@
       "description": "These settings affect all the Kaana accounts on this browser.",
       "AddThemeButton": "Add Theme",
     },
+    "post": {
+      "title": "Post",
+    },
+    "home": {
+      "title": "Home",
+      "topPosts": "Top Posts",
+    },
+    "search": {
+      "title": "Search",
+      "search": {
+        "placeholder": "Search anything",
+      },
+      "searchResults": "Search Results",
+      "noResults": "No results found",
+    },
   },
   "banners": {
-    "welcome": "hello, welcome to %{app_name}!"
+    "welcome": "Hello, welcome to %{app_name}!"
   },
   "buttons": {
     "done": "Done",
@@ -21,5 +36,14 @@
     "next": "Next",
     "finish": "Finish",
     "submit": "Submit",
+    "post": "Post",
   },
+  "footer": {
+    "text": "Made with ❤️ in the 🌎 by %{author}",
+    "links": {
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "accessibility": "Accessibility",
+    }
+  }
 }
