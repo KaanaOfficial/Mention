@@ -9,13 +9,13 @@
             </svg>
             <div
                 class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
-                                                                                         text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
-                                                                                             group-focus-visible:opacity-100 translate-y-3">
-                <span>Back</span>
+                                                                                                                         text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
+                                                                                                                             group-focus-visible:opacity-100 translate-y-3">
+                <span>{{ $t('buttons.back') }}</span>
             </div>
         </button>
         <div class="flex gap-8">
-            <h2 class="text-xl font-bold">Post</h2>
+            <h2 class="text-xl font-bold">{{ $t('pages.post.title') }}</h2>
         </div>
     </header>
     <FeedPost :post="post" />
@@ -35,9 +35,9 @@
                     <div class="flex flex-col gap-6">
                         <div class="flex items-center gap-3"><textarea id=":r8:"
                                 class="w-full min-w-0 resize-none bg-transparent text-xl outline-none placeholder:text-light-secondary dark:placeholder:text-dark-secondary"
-                                placeholder="Write your reply" style="height: 28px !important;"></textarea><button
-                                class="custom-button main-tab cursor-pointer bg-main-accent px-4 py-1.5 font-bold text-white opacity-50"
-                                type="button">Reply</button></div>
+                                placeholder="Write your reply" style="height: 28px !important;"></textarea>
+                            <UiButton type="submit" disabled class="my-button">{{ $t('buttons.post') }}</UiButton>
+                        </div>
                     </div>
                 </div>
             </div>
