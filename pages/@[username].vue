@@ -73,7 +73,7 @@
             </div>
             <NuxtLink
               class="custom-button main-tab dark-bg-tab group relative cursor-not-allowed border border-light-line-reply p-2 hover:bg-light-primary/10 active:bg-light-primary/20 dark:border-light-secondary dark:hover:bg-dark-primary/10 dark:active:bg-dark-primary/20"
-              external="true" :to="`https://allo.kaana.io/@${user.username}`" target="_blank" rel="noreferrer"><svg
+              :to="`https://allo.kaana.io/@${user.username}`" target="_blank" rel="noreferrer"><svg
                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" aria-hidden="true" class="h-5 w-5">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -119,8 +119,8 @@
                     </path>
                   </svg>
                 </i>
-                <NuxtLink class="custom-underline font-medium text-main-accent" external="true" :to="user.link.url"
-                  target="_blank" rel="noreferrer">{{ user.link.text }}
+                <NuxtLink class="custom-underline font-medium text-main-accent" :to="user.link.url" target="_blank"
+                  rel="noreferrer">{{ user.link.text }}
                 </NuxtLink>
               </div>
               <div class="flex items-center gap-1" v-if="user.signup_date">
@@ -142,7 +142,8 @@
               </div>
             </div>
           </div>
-          <p class="status bg-main-accent/10">{{ user.bio.formatted }}</p>
+          <p class="status bg-main-accent/20 border-2 border-dark-border dark:border-light-border">{{ user.bio.formatted
+          }}</p>
         </div>
         <div class="stats">
           <NuxtLink v-for="stat in user.stats" v-show="stat.show" :to="stat.link"
