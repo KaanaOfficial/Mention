@@ -11,7 +11,7 @@
                   class="box-border block overflow-hidden w-[initial] h-[initial] opacity-100 relative m-0 p-0 border-0">
                   <span
                     class="box-border block w-[initial] h-[initial] opacity-100 m-0 pt-[100%] pb-0 px-0 border-0"></span><img
-                    alt="{{ post.user.name}}" :src="post.user.avatar"
+                    alt="{{ post.user.name}}" :src="post.user.avatar.url"
                     class="rounded-full object-cover absolute box-border block w-0 h-0 min-w-full max-w-full min-h-full max-h-full m-auto p-0 border-[none] inset-0"></span>
               </figure>
             </NuxtLink>
