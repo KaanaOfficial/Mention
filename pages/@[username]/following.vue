@@ -1,6 +1,6 @@
 <template>
     <section class="mt-0.5">
-        <div class="flex justify-center p-8">
+        <div v-if="!followers.length" class="flex justify-center p-8">
             <div class="w-full max-w-sm">
                 <div class="flex flex-col items-center gap-6">
                     <figure style="width: 336px;">
@@ -22,5 +22,53 @@
                 </div>
             </div>
         </div>
+        <section class="w-full max-w-screen-lg">
+            <div v-for="follower in followers" :key="follower.id" :to="`/@${follower.username}`"
+                class="accent-tab hover-animation grid grid-cols-[auto,1fr] gap-3 px-4 py-3 hover:bg-light-primary/5 dark:hover:bg-dark-primary/5">
+                <div class="group relative self-start text-light-primary dark:text-dark-primary">
+                    <a class="blur-picture flex self-start">
+                        <figure class="w-12 h-12">
+                            <span class="block overflow-hidden rounded-full">
+                                <img alt="{{ follower.name.first }} {{ follower.name.last }}" :src="follower.avatar.url"
+                                    class="object-cover w-full h-full">
+                            </span>
+                        </figure>
+                    </a>
+                </div>
+                <div class="flex flex-col gap-1 truncate overflow-visible xs:overflow-visible">
+                    <div class="flex items-center justify-between gap-2 truncate overflow-visible xs:overflow-visible">
+                        <div
+                            class="flex flex-col justify-center truncate overflow-visible xs:overflow-visible whitespace-normal">
+                            <div class="text-lg font-medium">{{ follower.name.first }} {{ follower.name.last }}</div>
+                            <div class="flex items-center gap-1 text-light-secondary dark:text-dark-secondary">
+                                <div
+                                    class="group relative self-start text-light-primary dark:text-dark-primary grid [&>div]:translate-y-7">
+                                    <NuxtLink class="truncate font-medium text-light-secondary dark:text-dark-secondary">
+                                        @{{ follower.username }}
+                                    </NuxtLink>
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            class="custom-button main-tab dark:bg-tab min-w-[106px] self-start border border-light-line-reply px-4 py-1.5 font-medium hover:border-accent-red hover:bg-accent-red/10 hover:text-accent-red inner:hover:hidden dark:border-light-secondary">Follow</button>
+                    </div>
+                    <div class="whitespace-normal">{{ follower.bio }}</div>
+                </div>
+            </div>
+        </section>
     </section>
 </template>
+
+<script>
+export default defineComponent({
+    name: 'FollowersPage',
+
+    setup() {
+        const followers = [];
+
+        return {
+            followers,
+        };
+    },
+});
+</script>

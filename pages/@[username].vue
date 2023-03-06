@@ -16,7 +16,7 @@
       </button>
       <div class="truncate" data-projection-id="10" style="opacity: 1">
         <NuxtLink class="flex items-center gap-1 truncate font-bold pointer-events-none -mt-1 text-xl" tabindex="-1"
-          to="/@{{ user.username }}">
+          :to="`/@${user.username}`">
           <h2 class="truncate">{{ user.name.first }} {{ user.name.last }}</h2>
           <Icon name="material-symbols:verified" class="text-main-accent h-5 w-5" />
         </NuxtLink>
@@ -90,7 +90,7 @@
         </div>
         <div>
           <NuxtLink class="flex items-center gap-1 truncate font-bold pointer-events-none -mb-1 text-xl" tabindex="-1"
-            to="/@{{ user.username }}">
+            :to="`/@${user.username}`">
             <p class="truncate font-bold text-2xl mb-1">{{ user.name.first }} {{ user.name.last }}</p>
             <Icon name="material-symbols:verified" class="text-main-accent h-6 w-6" />
           </NuxtLink>
@@ -146,8 +146,8 @@
           }}</p>
         </div>
         <div class="stats">
-          <NuxtLink v-for="stat in user.stats" v-show="stat.show" :to="stat.link"
-            class="stat flex-col items-center mx-auto text-center bg-main-accent/20 text-accent outline-none transition hover:brightness-90 active:brightness-75 xs:static xs:translate-y-0 xs:hover:bg-main-accent/50 xs:active:bg-main-accent/75 border-2 border-dark-border dark:border-light-border">
+          <NuxtLink v-for="stat in user.stats" v-show="stat.show" :to="stat.link.enabled ? stat.link.url : null"
+            class="stat select-none flex-col items-center mx-auto text-center bg-main-accent/20 text-accent outline-none transition hover:brightness-90 active:brightness-75 xs:static xs:translate-y-0 xs:hover:bg-main-accent/50 xs:active:bg-main-accent/75 border-2 border-dark-border dark:border-light-border">
             <p class="font-bold text-xl">{{ stat.value }}</p>
             <p>{{ stat.name }}</p>
           </NuxtLink>
@@ -159,7 +159,7 @@
       data-projection-id="8" style="opacity: 1">
       <NuxtLink
         class="hover-animation main-tab dark-bg-tab flex flex-1 justify-center hover:bg-light-primary/10 dark:hover:bg-dark-primary/10"
-        to="/@{{ user.username }}">
+        :to="`/@${user.username}`">
         <div class="px-4 md:px-6">
           <p
             class="flex flex-col gap-2 whitespace-nowrap pt-3 font-bold transition-colors duration-200 text-light-primary dark:text-dark-primary [&amp;>i]:scale-100 [&amp;>i]:opacity-100">
@@ -170,7 +170,7 @@
       </NuxtLink>
       <NuxtLink
         class="hover-animation main-tab dark-bg-tab flex flex-1 justify-center hover:bg-light-primary/10 dark:hover:bg-dark-primary/10"
-        to="/@{{ user.username }}/with_replies">
+        :to="`/@${user.username}/with_replies`">
         <div class="px-4 md:px-6">
           <p
             class="flex flex-col gap-2 whitespace-nowrap pt-3 transition-colors duration-200 text-light-secondary dark:text-dark-secondary">
@@ -181,7 +181,7 @@
       </NuxtLink>
       <NuxtLink
         class="hover-animation main-tab dark-bg-tab flex flex-1 justify-center hover:bg-light-primary/10 dark:hover:bg-dark-primary/10"
-        to="/@{{ user.username }}/affiliates">
+        :to="`/@${user.username}/affiliates`">
         <div class="px-4 md:px-6">
           <p
             class="flex flex-col gap-2 whitespace-nowrap pt-3 transition-colors duration-200 text-light-secondary dark:text-dark-secondary">
@@ -192,7 +192,7 @@
       </NuxtLink>
       <NuxtLink
         class="hover-animation main-tab dark-bg-tab flex flex-1 justify-center hover:bg-light-primary/10 dark:hover:bg-dark-primary/10"
-        to="/@{{ user.username }}/media">
+        :to="`/@${user.username}/media`">
         <div class="px-4 md:px-6">
           <p
             class="flex flex-col gap-2 whitespace-nowrap pt-3 transition-colors duration-200 text-light-secondary dark:text-dark-secondary">
@@ -203,7 +203,7 @@
       </NuxtLink>
       <NuxtLink
         class="hover-animation main-tab dark-bg-tab flex flex-1 justify-center hover:bg-light-primary/10 dark:hover:bg-dark-primary/10"
-        to="/@{{ user.username }}/likes">
+        :to="`/@${user.username}/likes`">
         <div class="px-4 md:px-6">
           <p
             class="flex flex-col gap-2 whitespace-nowrap pt-3 transition-colors duration-200 text-light-secondary dark:text-dark-secondary">
@@ -226,8 +226,9 @@ export default defineComponent({
     const store = useMentionStore()
     const router = useRouter()
     const route = useRoute()
+    let user = [];
 
-    const user = {
+    user = {
       name: {
         first: "Albert",
         last: "Isern Alvarez",
@@ -265,7 +266,7 @@ export default defineComponent({
           name: 'Posts',
           value: "1.2K",
           link: {
-            url: `/@${route.params.username}`,
+            url: `/@${user.username}`,
             enabled: true,
           },
         },
@@ -274,7 +275,7 @@ export default defineComponent({
           name: 'Reposts',
           value: "732",
           link: {
-            url: `/@${route.params.username}/reposts`,
+            url: `/@${user.username}/reposts`,
             enabled: true,
           },
         },
@@ -283,7 +284,7 @@ export default defineComponent({
           name: 'Replies',
           value: "233",
           link: {
-            url: `/@${route.params.username}/replies`,
+            url: `/@${user.username}/replies`,
             enabled: true,
           },
         },
@@ -292,7 +293,7 @@ export default defineComponent({
           name: 'Karma',
           value: "51.4K",
           link: {
-            url: `/@${route.params.username}/karma`,
+            url: `/@${user.username}/karma`,
             enabled: false,
           },
         },
@@ -301,7 +302,7 @@ export default defineComponent({
           name: 'Reactions',
           value: "52",
           link: {
-            url: `/@${route.params.username}/reactions`,
+            url: `/@${user.username}/reactions`,
             enabled: false,
           },
         },
@@ -310,7 +311,7 @@ export default defineComponent({
           name: 'Following',
           value: "388",
           link: {
-            url: `/@${route.params.username}/following`,
+            url: `/@${user.username}/following`,
             enabled: true,
           }
         },
@@ -319,7 +320,7 @@ export default defineComponent({
           name: 'Followers',
           value: "23.4K",
           link: {
-            url: `/@${route.params.username}/followers`,
+            url: `/@${user.username}/followers`,
             enabled: true,
           }
         },
