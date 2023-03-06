@@ -18,7 +18,9 @@ export const useMentionStore = defineStore({
             last: "Smith",
           },
           username: "alice",
-          avatar: "https://api.dicebear.com/5.x/micah/svg?seed=540463",
+          avatar: {
+            url: `https://api.dicebear.com/5.x/micah/svg?seed=${Date.now()}`,
+          },
         },
         content: {
           text: "Hello, Mention!",
