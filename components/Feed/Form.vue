@@ -1,6 +1,6 @@
 <template>
     <div>
-        <form class="flex flex-col border-b-2 border-dark-border dark:border-light-border">
+        <form class="flex flex-col border-b-2 border-dark-border dark:border-light-border" @submit.prevent="submitPost">
             <label
                 class="hover-animation grid w-full grid-cols-[auto,1fr] gap-3 px-4 py-3 border-b-2 border-light-border dark:border-dark-border">
                 <NuxtLink class="blur-picture flex self-start" to="/@AlbertIsernAl">
@@ -21,7 +21,7 @@
                         <div class="flex flex-col gap-6">
                             <div class="flex items-center gap-3"><textarea id=":r2:"
                                     class="w-full min-w-0 resize-none bg-transparent text-xl outline-none placeholder:text-light-secondary dark:placeholder:text-dark-secondary"
-                                    placeholder="What's happening?" style="height: 28px !important;"></textarea></div>
+                                    placeholder="What's happening?" v-model="text"></textarea></div>
                         </div>
                     </div>
                     <div class="hidden lg:flex justify-between " style="opacity: 1;">
@@ -33,8 +33,8 @@
                                 <Icon name="material-symbols:image-rounded" size="22" />
                                 <div
                                     class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
-                                                                                                                                                                                                             text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
-                                                                                                                                                                                                                 group-focus-visible:opacity-100 translate-y-3">
+                                                                                                                                                                                                                                                                     text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
+                                                                                                                                                                                                                                                                         group-focus-visible:opacity-100 translate-y-3">
                                     <span>Media</span>
                                 </div>
                             </button>
@@ -44,8 +44,8 @@
                                 <Icon name="material-symbols:gif-box-rounded" size="22" />
                                 <div
                                     class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
-                                                                                                                                                                                                             text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
-                                                                                                                                                                                                             group-focus-visible:opacity-100 translate-y-3">
+                                                                                                                                                                                                                                                                     text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
+                                                                                                                                                                                                                                                                     group-focus-visible:opacity-100 translate-y-3">
                                     <span>GIF</span>
                                 </div>
                             </button>
@@ -55,8 +55,8 @@
                                 <Icon name="material-symbols:view-kanban-outline-rounded" size="22" />
                                 <div
                                     class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
-                                                                                                                                                                                                         text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
-                                                                                                                                                                                                             group-focus-visible:opacity-100 translate-y-3">
+                                                                                                                                                                                                                                                                 text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
+                                                                                                                                                                                                                                                                     group-focus-visible:opacity-100 translate-y-3">
                                     <span>Poll</span>
                                 </div>
                             </button>
@@ -66,8 +66,8 @@
                                 <Icon name="material-symbols:sentiment-very-satisfied-outline" size="22" />
                                 <div
                                     class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
-                                                                                                                                                                                                         text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
-                                                                                                                                                                                                             group-focus-visible:opacity-100 translate-y-3">
+                                                                                                                                                                                                                                                                 text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
+                                                                                                                                                                                                                                                                     group-focus-visible:opacity-100 translate-y-3">
                                     <span>Emoji</span>
                                 </div>
                             </button>
@@ -77,8 +77,8 @@
                                 <Icon name="material-symbols:schedule" size="22" />
                                 <div
                                     class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
-                                                                                                                                                                                                         text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
-                                                                                                                                                                                                             group-focus-visible:opacity-100 translate-y-3">
+                                                                                                                                                                                                                                                                 text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
+                                                                                                                                                                                                                                                                     group-focus-visible:opacity-100 translate-y-3">
                                     <span>Schedule</span>
                                 </div>
                             </button>
@@ -88,8 +88,8 @@
                                 <Icon name="material-symbols:location-on" size="22" />
                                 <div
                                     class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
-                                                                                                                                                                                                         text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
-                                                                                                                                                                                                             group-focus-visible:opacity-100 translate-y-3">
+                                                                                                                                                                                                                                                                 text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
+                                                                                                                                                                                                                                                                     group-focus-visible:opacity-100 translate-y-3">
                                     <span>Location</span>
                                 </div>
                             </button>
@@ -106,11 +106,11 @@
                                                 style="stroke-dashoffset: 56.5487; stroke-dasharray: 56.5487;"></circle>
                                         </svg></i><span
                                         class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[45%]
-                                                                                                                                                                                                           scale-50 text-xs opacity-0">280</span>
+                                                                                                                                                                                                                                                                   scale-50 text-xs opacity-0">280</span>
                                     <div
                                         class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
-                                                                                                                                                                                                         text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
-                                                                                                                                                                                                             group-focus-visible:opacity-100 translate-y-3">
+                                                                                                                                                                                                                                                                 text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
+                                                                                                                                                                                                                                                                     group-focus-visible:opacity-100 translate-y-3">
                                         <span>280
                                             characters
                                             remaining</span>
@@ -125,13 +125,13 @@
                                     </svg>
                                     <div
                                         class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs
-                                                                                                                                                                                                         text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
-                                                                                                                                                                                                             group-focus-visible:opacity-100 translate-y-3">
+                                                                                                                                                                                                                                                                 text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible 
+                                                                                                                                                                                                                                                                     group-focus-visible:opacity-100 translate-y-3">
                                         <span>Add</span>
                                     </div>
                                 </button>
                             </div>
-                            <UiButton type="submit" disabled class="my-button">{{ $t('buttons.post') }}</UiButton>
+                            <UiButton type="submit" class="my-button">{{ $t('buttons.post') }}</UiButton>
                         </div>
                     </div>
                 </div>
@@ -139,3 +139,48 @@
         </form>
     </div>
 </template>
+
+<script>
+export default {
+    setup() {
+        const postsStore = usePostsStore()
+
+        const title = ref('')
+        const text = ref('')
+
+        const submitPost = async () => {
+            const post = {
+                user_id: 2,
+                content: {
+                    title: title.value,
+                    text: text.value,
+                    media: [
+                        {
+                            url: 'https://source.unsplash.com/random/800x600',
+                            type: 'image',
+                        },
+                    ],
+                },
+                replies: [],
+                created_at: new Date(),
+                location: {
+                    name: 'New York, NY',
+                    lat: 40.7128,
+                    lng: 74.006,
+                },
+            }
+
+            await postsStore.addPost(post)
+
+            title.value = ''
+            text.value = ''
+        }
+
+        return {
+            title,
+            text,
+            submitPost,
+        }
+    },
+}
+</script>
