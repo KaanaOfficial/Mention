@@ -5,17 +5,17 @@
       <div class="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1">
         <div class="flex flex-col items-center gap-2">
           <div class="group relative self-start text-light-primary dark:text-dark-primary [&amp;>div]:translate-y-2">
-            <NuxtLink class="blur-picture flex self-start" :to="`/@${post.user.username}`">
+            <NuxtLink class="blur-picture flex self-start" :to="`/@${post?.user?.username}`">
               <figure class="w-12">
                 <span
                   class="box-border block overflow-hidden w-[initial] h-[initial] opacity-100 relative m-0 p-0 border-0">
                   <span
                     class="box-border block w-[initial] h-[initial] opacity-100 m-0 pt-[100%] pb-0 px-0 border-0"></span><img
-                    alt="{{ post.user.name}}" :src="post.user.avatar.url"
+                    alt="{{ post?.user?.name}}" :src="post?.user?.avatar?.url"
                     class="rounded-full object-cover absolute box-border block w-0 h-0 min-w-full max-w-full min-h-full max-h-full m-auto p-0 border-[none] inset-0"></span>
               </figure>
             </NuxtLink>
-            <MiniCardsUser :user="post.user" />
+            <MiniCardsUser v-if="post.user" :user="post?.user" />
           </div>
         </div>
         <div class="flex min-w-0 flex-col">
@@ -25,26 +25,35 @@
                 class="group relative self-start text-light-primary dark:text-dark-primary grid [&amp;>div]:translate-y-7">
                 <NuxtLink
                   class="flex items-center gap-1 truncate font-bold custom-underline text-light-primary dark:text-dark-primary"
-                  :to="`/@${post.user.username}`">
-                  <p class="truncate">{{ post.user.name.first }} {{ post.user.name.last }}</p>
+                  :to="`/@${post?.user?.username}`">
+                  <p class="truncate">{{ post?.user?.name?.first }} {{ post?.user?.name?.last }}</p>
                   <Icon name="material-symbols:verified" class="text-main-accent h-5 w-5" />
                 </NuxtLink>
-                <MiniCardsUser :user="post.user" />
+                <MiniCardsUser v-if="post.user" :user="post?.user" />
               </div>
               <div
                 class="group relative self-start text-light-primary dark:text-dark-primary grid [&amp;>div]:translate-y-7">
                 <NuxtLink class="truncate font-medium text-light-secondary dark:text-dark-secondary"
-                  :to="`/@${post.user.username}`">
-                  @{{ post.user.username }}</NuxtLink>
-                <MiniCardsUser :user="post.user" />
+                  :to="`/@${post?.user?.username}`">@{{ post?.user?.username }}</NuxtLink>
               </div>
               <div class="flex gap-1"><i>·</i>
                 <div class="group relative">
-                  <NuxtLink class="custom-underline font-medium peer whitespace-nowrap" :to="`/p/${post.id}`">23 Feb
-                  </NuxtLink>
+                  <NuxtLink class="custom-underline font-medium peer whitespace-nowrap" :to="`/p/${post?.id}`">{{
+                    post.date.created }}</NuxtLink>
                   <div
                     class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible group-focus-visible:opacity-100 translate-y-1 peer-focus:opacity-100 peer-focus-visible:visible peer-focus-visible:delay-200">
-                    <span>16:31 · 23 Feb 2023</span>
+                    <span>{{ post.date.created }}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex gap-1"><i>·</i>
+                <div class="group relative">
+                  <NuxtLink class="custom-underline font-medium peer whitespace-nowrap" :to="`/p/${post?.id}`">{{
+                    post.location.name }}</NuxtLink>
+                  <MiniCardsLocation v-if="post.location" :location="post?.location" />
+                  <div
+                    class="invisible absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-[#666666] px-1 py-0.5 text-xs text-white opacity-0 [transition:visibility_0ms_ease_200ms,opacity_200ms_ease] dark:bg-[#495A69] group-hover:visible group-hover:opacity-100 group-hover:delay-500 group-focus-visible:visible group-focus-visible:opacity-100 translate-y-1 peer-focus:opacity-100 peer-focus-visible:visible peer-focus-visible:delay-200">
+                    <span>{{ post.location.name }}</span>
                   </div>
                 </div>
               </div>
@@ -71,7 +80,7 @@
               </div>
             </div>
           </div>
-          <p class="whitespace-pre-line break-words">{{ post.content.text }}</p>
+          <p class="whitespace-pre-line break-words">{{ post?.content?.text }}</p>
           <div class="mt-1 flex flex-col gap-2">
             <div class="flex text-light-secondary inner:outline-none dark:text-dark-secondary max-w-md justify-between">
               <button
