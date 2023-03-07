@@ -17,15 +17,16 @@
             <h2 class="text-xl font-bold">{{ $t('pages.post.title') }}</h2>
         </div>
     </header>
-    <FeedPost :post="post" />
+    <FeedPost :post="post" v-if="post" />
     <form class="flex flex-col -mx-4 px-4">
         <label class="hover-animation grid w-full grid-cols-[auto,1fr] gap-3 px-4 py-3 pt-3 pb-1" for=":r8:"><a
                 class="blur-picture flex self-start">
                 <figure style="width: 48px;"><span
                         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                            alt="{{ post.user.name.first }} {{ post.user.name.last }}" :src="post.user.avatar.url"
-                            decoding="async" data-nimg="responsive" class="rounded-full object-cover"
+                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span>
+                        <img v-if="post && post.user" :alt="post.user.name.first + ' ' + post.user.name.last"
+                            :src="post.user.avatar.url" decoding="async" data-nimg="responsive"
+                            class="rounded-full object-cover"
                             style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
                 </figure>
             </a>
@@ -47,14 +48,16 @@
 <script>
 export default defineComponent({
     setup() {
-        const store = useMentionStore()
+        const postsStore = usePostsStore()
         const router = useRouter()
         const route = useRoute()
+
+        postsStore.fetchPosts();
 
         // Use computed property to get post by ID from store
         const post = computed(() => {
             const postId = parseInt(route.params.id)
-            return store.getPostById(postId)
+            return postsStore.getPostById(postId)
         })
 
         // Define function to go back to previous page
